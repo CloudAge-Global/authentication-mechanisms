@@ -1,0 +1,51 @@
+#Centos AMI version 6. ami-1585c46a
+#Access via SSH to the instance and run 
+#sudo fdisk /dev/xvda
+#press c
+#press u
+#press p to show current partitions
+#press d to delete current partitions NOTE: data is not lost, since it is a Das
+#press n to create a new partition
+#press p to set it as primary
+#press 1 to set the first cylinder
+#Press enter (Set the desired new space, if empty the whole space is reserved)
+#press a to make it bootable
+#press 1 and 
+#w to write changes
+#Reboot instance
+
+#check Prerequesites
+
+wget https://github.com/CloudAge-Global/multinode-hadoop-v2/blob/6e7e12566c27bd952f320941be729843d755fb87/multinode-hadoop-v2/check-pre-requsites/check-pre-req.sh
+
+
+# Run all Prerequesites by typing ./filename             or                 sh filename
+
+wget https://github.com/CloudAge-Global/multinode-hadoop-v2/blob/6e7e12566c27bd952f320941be729843d755fb87/multinode-hadoop-v2/disable_iptables/disable_iptables.sh
+
+wget https://github.com/CloudAge-Global/multinode-hadoop-v2/blob/6e7e12566c27bd952f320941be729843d755fb87/multinode-hadoop-v2/disable_ipv6/disable_ipv6.sh
+
+wget https://github.com/CloudAge-Global/multinode-hadoop-v2/blob/6e7e12566c27bd952f320941be729843d755fb87/multinode-hadoop-v2/disable_selinux/disable_selinux.sh
+
+wget https://github.com/CloudAge-Global/multinode-hadoop-v2/blob/6e7e12566c27bd952f320941be729843d755fb87/multinode-hadoop-v2/disbale_thp/disable_thp.sh
+
+wget https://github.com/CloudAge-Global/multinode-hadoop-v2/blob/6e7e12566c27bd952f320941be729843d755fb87/multinode-hadoop-v2/install_lzo/install_lzo.sh
+
+wget  https://github.com/CloudAge-Global/multinode-hadoop-v2/blob/6e7e12566c27bd952f320941be729843d755fb87/multinode-hadoop-v2/install_nscd/install_nscd.sh
+
+wget https://github.com/CloudAge-Global/multinode-hadoop-v2/blob/6e7e12566c27bd952f320941be729843d755fb87/multinode-hadoop-v2/install_ntp/install_ntp.sh
+
+wget  https://github.com/CloudAge-Global/multinode-hadoop-v2/blob/6e7e12566c27bd952f320941be729843d755fb87/multinode-hadoop-v2/install_tools/install_tools.sh
+
+wget https://github.com/CloudAge-Global/multinode-hadoop-v2/blob/6e7e12566c27bd952f320941be729843d755fb87/multinode-hadoop-v2/remove_tuned/remove_tuned.sh
+
+wget https://github.com/CloudAge-Global/multinode-hadoop-v2/blob/6e7e12566c27bd952f320941be729843d755fb87/multinode-hadoop-v2/remove_tuned/tune_kernel.sh
+
+sysctl vm.swappiness=1
+
+#check Prerequisites again
+
+ sudo sh check-pre-req.sh
+
+Please Subscribe to CentOS 7.5 (x86_64) image - ami-9887c6e7 
+
